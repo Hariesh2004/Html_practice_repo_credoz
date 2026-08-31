@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forms and Tables</title>
+</head>
+
+<body>
+
+    
+
+    <fieldset>
+        <legend>Mandatory Student Details</legend>
+
+        <form onsubmit="submitEvent(event)">
+
+            <div class="row">
+                <label for="Student-name">
+                    <span>Student Name : </span>
+                    <span style="color: red;">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="Student-name"
+                    name="Student-name"
+                    placeholder="Enter Your Name"
+                    required
+                />
+            </div>
+
+            &nbsp;&nbsp;&nbsp;
+
+            <div class="row">
+                <label for="Student-mail">
+                    <span>Student G-Mail : </span>
+                    <span style="color: red;">*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="Student-mail"
+                    name="Student-mail"
+                    placeholder="Enter Your Mail"
+                    required
+                />
+            </div>
+
+            &nbsp;&nbsp;&nbsp;
+
+            <div class="row">
+                <label for="Student-age">
+                    <span>Age : </span>
+                    <span style="color: red;">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    id="Student-age"
+                    name="Student-age"
+                    placeholder="Enter Your Age"
+                    required
+                />
+            </div>
+
+            &nbsp;&nbsp;&nbsp;
+
+            <div class="row">
+                <label for="Student-mobile">
+                    <span>Mobile Number : </span>
+                    <span style="color: red;">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="Student-mobile"
+                    name="Student-mobile"
+                    pattern="[0-9]{6,10}"
+                    placeholder="Enter Your Mobile-No"
+                    required
+                />
+            </div>
+
+            &nbsp;&nbsp;&nbsp;
+
+            
+
+            <fieldset>
+                <legend>Gender</legend>
+
+                <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    required
+                />
+                <label for="male">Male</label>
+
+                <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                />
+                <label for="female">Female</label>
+
+            </fieldset>
+
+            &nbsp;&nbsp;&nbsp;
+
+            
+
+            <div class="row">
+
+                <label for="remark">
+                    <span>Remarks of Subject handling faculty : </span>
+                    <span style="color: red;">*</span>
+                </label>
+
+                <select
+                    id="remark"
+                    name="remark"
+                    required
+                >
+                    <option value="">Choose the Subject</option>
+                    <option value="M">ML</option>
+                    <option value="A">AI</option>
+                    <option value="D">DS</option>
+                </select>
+
+            </div>
+
+            &nbsp;&nbsp;&nbsp;
+
+           
+
+            <div class="row">
+
+                <label for="comments">
+                    <span>Comments : </span>
+                    <span style="color: red;">*</span>
+                </label>
+
+                <textarea
+                    id="comments"
+                    name="comments"
+                    rows="20"
+                    cols="20"
+                    placeholder="Place your remarks"
+                    required
+                ></textarea>
+
+            </div>
+
+            &nbsp;&nbsp;&nbsp;
+
+           
+
+            <div class="row">
+
+                <input type="submit" value="Submit">
+
+                <input type="button" value="Cancel">
+
+                <button type="reset">Clear</button>
+
+            </div>
+
+        </form>
+
+       
+
+        <script>
+            function submitEvent(e) {
+                e.preventDefault();
+
+                const formData = new FormData(e.target);
+
+                for (const [key, value] of formData.entries()) {
+                    console.log(key + ":", value);
+                }
+            }
+        </script>
+
+    </fieldset>
+
+
+    
+
+    <br><br>
+
+    <table border="1">
+
+        <caption>
+            <strong>AI & DS Class Schedule</strong>
+        </caption>
+
+
+        <thead>
+
+            <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Time</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Faculty</th>
+            </tr>
+
+        </thead>
+
+
+        
+
+        <tbody>
+
+            <!-- Monday -->
+
+            <tr>
+                <th scope="rowgroup" rowspan="9">Monday</th>
+
+                <td>9:00 - 10:00</td>
+                <td>AI</td>
+                <td>Sachin</td>
+            </tr>
+
+
+            <tr>
+                <td>10:00 - 11:00</td>
+                <td>DS</td>
+                <td>Deepa</td>
+            </tr>
+
+
+            <tr>
+                <td>11:00 - 11:15</td>
+
+                <td colspan="2">
+                    <strong>Break</strong>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>11:15 - 12:15</td>
+                <td>ML</td>
+                <td>Saranya</td>
+            </tr>
+
+
+            <tr>
+                <td>12:15 - 1:00</td>
+
+                <td colspan="2">
+                    <strong>Lunch Break</strong>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1:00 - 2:00</td>
+                <td>DS</td>
+                <td>Deepa</td>
+            </tr>
+
+
+            <tr>
+                <td>2:00 - 3:00</td>
+                <td>AI</td>
+                <td>Sachin</td>
+            </tr>
+
+
+          
+
+            <tr>
+                <td>3:00 - 3:15</td>
+
+                <td colspan="2">
+                    <strong>Break</strong>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>3:15 - 4:15</td>
+                <td>ML</td>
+                <td>Saranya</td>
+            </tr>
+
+        </tbody>
+
+
+
+        <tfoot>
+
+            <tr>
+                <th colspan="4">
+                    Class Ends at 4:15 PM
+                </th>
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+</body>
+
+</html>
+
