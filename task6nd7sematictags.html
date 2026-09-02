@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="AI and Data Science student details form and class schedule">
+
+    <title>AI & DS Student Portal</title>
+</head>
+
+<body>
+
+    <!-- ================= header ================= -->
+
+    <header>
+        <h1>AI & DS Student Portal</h1>
+
+        <p>
+            Student details and weekly class schedule
+        </p>
+
+        <!-- ================= navigation  ================= -->
+
+        <nav aria-label="Main Navigation">
+            <a href="#student-details">Student Details</a>
+            |
+            <a href="#class-schedule">Class Schedule</a>
+        </nav>
+    </header>
+
+
+    <!-- ================= main content = student details, class schedule  ---> 
+
+    <main>
+
+        <!-- ================= student detail form ================= -->
+
+        <section id="student-details">
+
+            <header>
+                <h2>Student Registration</h2>
+
+                <p>
+                    Please enter your mandatory student information.
+                </p>
+            </header>
+
+
+            <!-- ================= stud form ================= -->
+
+            <form onsubmit="submitEvent(event)">
+
+
+                <fieldset>
+
+                    <legend>Mandatory Student Details</legend>
+
+
+
+                    <div>
+                        <label for="student-name">
+                            Student Name :
+                            <span aria-hidden="true" style="color: red;">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="student-name"
+                            name="student_name"
+                            placeholder="Enter Your Name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <br>
+
+
+                
+
+                    <div>
+                        <label for="student-email">
+                            Student G-Mail :
+                            <span aria-hidden="true" style="color: red;">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="student-email"
+                            name="student_email"
+                            placeholder="Enter Your Mail"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="student-age">
+                            Age :
+                            <span aria-hidden="true" style="color: red;">*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="student-age"
+                            name="student_age"
+                            placeholder="Enter Your Age"
+                            min="1"
+                            max="100"
+                            required
+                        >
+                    </div>
+
+                    <br>
+
+
+                    <div>
+                        <label for="student-mobile">
+                            Mobile Number :
+                            <span aria-hidden="true" style="color: red;">*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="student-mobile"
+                            name="student_mobile"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            inputmode="numeric"
+                            placeholder="Enter 10-digit Mobile Number"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                </fieldset>
+
+
+                <br>
+
+
+                <fieldset>
+
+                    <legend>
+                        Gender
+                        <span aria-hidden="true" style="color: red;">*</span>
+                    </legend>
+
+                    <input
+                        type="radio"
+                        id="male"
+                        name="gender"
+                        value="male"
+                        required
+                    >
+
+                    <label for="male">
+                        Male
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="female"
+                        name="gender"
+                        value="female"
+                    >
+
+                    <label for="female">
+                        Female
+                    </label>
+
+                </fieldset>
+
+
+                <br>
+
+
+                <fieldset>
+
+                    <legend>Faculty Remarks</legend>
+
+                    <div>
+
+                        <label for="subject">
+                            Subject :
+                            <span aria-hidden="true" style="color: red;">*</span>
+                        </label>
+
+                        <select
+                            id="subject"
+                            name="subject"
+                            required
+                        >
+
+                            <option value="">
+                                Choose the Subject
+                            </option>
+
+                            <option value="ML">
+                                Machine Learning
+                            </option>
+
+                            <option value="AI">
+                                Artificial Intelligence
+                            </option>
+
+                            <option value="DS">
+                                Data Science
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <br>
+
+
+                    <div>
+
+                        <label for="comments">
+                            Comments :
+                            <span aria-hidden="true" style="color: red;">*</span>
+                        </label>
+
+                        <br>
+
+                        <textarea
+                            id="comments"
+                            name="comments"
+                            rows="8"
+                            cols="40"
+                            placeholder="Place your remarks"
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </fieldset>
+
+
+                <br>
+
+
+                <!-- =================  ButtonS ================= -->
+
+                <section aria-label="Form Actions">
+
+                    <input
+                        type="submit"
+                        value="Submit"
+                    >
+
+                    <button type="button">
+                        Cancel
+                    </button>
+
+                    <button type="reset">
+                        Clear
+                    </button>
+
+                </section>
+
+            </form>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- =================  class time table ================= -->
+
+        <section id="class-schedule">
+
+            <header>
+
+                <h2>AI & DS Class Schedule</h2>
+
+                <p>
+                    Weekly timetable for the Artificial Intelligence
+                    and Data Science class.
+                </p>
+
+            </header>
+
+
+            <!-- ================= tags for table formation================= -->
+
+            <table border="1">
+
+                <caption>
+                    <strong>
+                        AI & DS Weekly Class Schedule
+                    </strong>
+                </caption>
+
+
+
+                <thead>
+
+                    <tr>
+
+                        <th scope="col">
+                            Day
+                        </th>
+
+                        <th scope="col">
+                            Time
+                        </th>
+
+                        <th scope="col">
+                            Subject
+                        </th>
+
+                        <th scope="col">
+                            Faculty
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                
+
+                <tbody>
+
+
+                    <tr>
+
+                        <th
+                            scope="row"
+                            rowspan="9"
+                        >
+                            Monday
+                        </th>
+
+                        <td>
+                            9:00 - 10:00
+                        </td>
+
+                        <td>
+                            Artificial Intelligence
+                        </td>
+
+                        <td>
+                            Sachin
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            10:00 - 11:00
+                        </td>
+
+                        <td>
+                            Data Science
+                        </td>
+
+                        <td>
+                            Deepa
+                        </td>
+
+                    </tr>
+
+
+                    <!-- BREAK -->
+
+                    <tr>
+
+                        <td>
+                            11:00 - 11:15
+                        </td>
+
+                        <td colspan="2">
+                            <strong>
+                                Break
+                            </strong>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            11:15 - 12:15
+                        </td>
+
+                        <td>
+                            Machine Learning
+                        </td>
+
+                        <td>
+                            Saranya
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            12:15 - 1:00
+                        </td>
+
+                        <td colspan="2">
+                            <strong>
+                                Lunch Break
+                            </strong>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            1:00 - 2:00
+                        </td>
+
+                        <td>
+                            Data Science
+                        </td>
+
+                        <td>
+                            Deepa
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            2:00 - 3:00
+                        </td>
+
+                        <td>
+                            Artificial Intelligence
+                        </td>
+
+                        <td>
+                            Sachin
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            3:00 - 3:15
+                        </td>
+
+                        <td colspan="2">
+                            <strong>
+                                Break
+                            </strong>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            3:15 - 4:15
+                        </td>
+
+                        <td>
+                            Machine Learning
+                        </td>
+
+                        <td>
+                            Saranya
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+
+                <tfoot>
+
+                    <tr>
+
+                        <th colspan="4">
+                            Class Ends at 4:15 PM
+                        </th>
+
+                    </tr>
+
+                </tfoot>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= footer section ================= -->
+
+    <footer>
+
+        <hr>
+
+        <p>
+            &copy; 2026 AI & DS Student Portal.
+            All rights reserved.
+        </p>
+
+        <p>
+            Developed for student academic management.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= js for show the form in dev tools ================= -->
+
+    <script>
+
+        function submitEvent(event) {
+
+            event.preventDefault();
+
+            const form = event.target;
+
+            const formData = new FormData(form);
+
+            for (const [key, value] of formData.entries()) {
+
+                console.log(key + ":", value);
+
+            }
+
+            alert("Student details submitted successfully!");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
